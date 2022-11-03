@@ -6,57 +6,74 @@ const Profil = ({ title, arr }) => {
       <Layout title={title}>
          <h2>{userName}</h2>
          <h3>{'Theme 1'}</h3>
-         <table>
-            <tr>
-               <th>{'Date'}</th>
-               <th>{'Total questions'}</th>
-               <th>{'Correct answers'}</th>
-               <th>{'Total Score'}</th>
-            </tr>
-            {arr.map((obj, id) => (
-               <tr key={id}>
-                  <td>{obj.date}</td>
-                  <td>{obj.totalQwestion}</td>
-                  <td>{obj.correctAnswer}</td>
-                  <td>{obj.totalScore}</td>
+         <table className="table">
+            <thead>
+               <tr>
+                  <th scope='col'>#</th>
+                  <th scope="col">{'Date'}</th>
+                  <th scope="col">{'Total questions'}</th>
+                  <th scope="col">{'Correct answers'}</th>
+                  <th scope="col">{'Total Score'}</th>
                </tr>
+            </thead>
+            {arr.map((obj, id) => (
+               <tbody key={id}>
+                  <tr>
+                     <th scope="row">{id + 1}</th>
+                     <td>{obj.date}</td>
+                     <td>{obj.totalQwestion}</td>
+                     <td>{obj.correctAnswer}</td>
+                     <td>{obj.totalScore}</td>
+                  </tr>
+               </tbody>
             ))}
-
-
          </table>
+         <br></br>
          <h3>{'Theme 2'}</h3>
-         <table>
-            <tr>
-               <th>{'Date'}</th>
-               <th>{'Total questions'}</th>
-               <th>{'Correct answers'}</th>
-               <th>{'Total Score'}</th>
-            </tr>
-            {arr.map((obj, id) => (
-               <tr key={id}>
-                  <td>{obj.date}</td>
-                  <td>{obj.totalQwestion}</td>
-                  <td>{obj.correctAnswer}</td>
-                  <td>{obj.totalScore}</td>
+         <table className='table'>
+            <thead>
+               <tr>
+                  <th scope='col'>#</th>
+                  <th>{'Date'}</th>
+                  <th>{'Total questions'}</th>
+                  <th>{'Correct answers'}</th>
+                  <th>{'Total Score'}</th>
                </tr>
+            </thead>
+            {arr.map((obj, id) => (
+               <tbody key={id}>
+                  <tr>
+                     <th scope="row">{id + 1}</th>
+                     <td>{obj.date}</td>
+                     <td>{obj.totalQwestion}</td>
+                     <td>{obj.correctAnswer}</td>
+                     <td>{obj.totalScore}</td>
+                  </tr>
+               </tbody>
             ))}
-
          </table>
+         <br></br>
          <h3>{'Theme 3'}</h3>
-         <table>
-            <tr>
-               <th>{'Date'}</th>
-               <th>{'Total questions'}</th>
-               <th>{'Correct answers'}</th>
-               <th>{'Total Score'}</th>
-            </tr>
-            {arr.map((obj, id) => (
-               <tr key={id}>
-                  <td>{obj.date}</td>
-                  <td>{obj.totalQwestion}</td>
-                  <td>{obj.correctAnswer}</td>
-                  <td>{obj.totalScore}</td>
+         <table className='table'>
+            <thead>
+               <tr>
+                  <th scope='col'>#</th>
+                  <th>{'Date'}</th>
+                  <th>{'Total questions'}</th>
+                  <th>{'Correct answers'}</th>
+                  <th>{'Total Score'}</th>
                </tr>
+            </thead>
+            {arr.map((obj, id) => (
+               <tbody key={id}>
+                  <tr>
+                     <th scope="row">{id + 1}</th>
+                     <td>{obj.date}</td>
+                     <td>{obj.totalQwestion}</td>
+                     <td>{obj.correctAnswer}</td>
+                     <td>{obj.totalScore}</td>
+                  </tr>
+               </tbody>
             ))}
 
          </table>
