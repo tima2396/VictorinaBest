@@ -8,6 +8,7 @@ const Layout = ({ title, children }) => {
         <meta charSet="utf-8" />
         <title>{title}</title>
       </head>
+      <h1>{'Flashcards'}</h1>
       <body>{children}</body>
     </html>
   );
