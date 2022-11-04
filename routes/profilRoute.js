@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   const dbTotal = await db.Total.findAll({ where: { userId: dbUser.id }, raw: true });
   console.log(dbTotal);
 
-  res.renderComponent(Profil, { title: 'Profil Page', dbTotal });
+  res.renderComponent(Profil, { title: 'Profil Page', dbTotal, dbUser });
 });
 
 // router.get('/', async (req, res) => {
