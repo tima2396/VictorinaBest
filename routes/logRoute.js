@@ -1,15 +1,16 @@
 const route = require('express').Router();
 const LoginPage = require('../views/LoginPage.jsx');
 const { User } = require('../db/models');
-// const users = [{ id: 1, tem: 'sadasd' }]
+
 route.get('/', async (req, res) => {
   res.renderComponent(LoginPage, { title: 'Start Page' });
 });
 
 route.post('/', async (req, res) => {
   const { login, password } = req.body;
+  res.app.locals.user = { login };
+  console.log(res.app.locals.user);
   const userLoginDb = await User.findOne({ where: { login } });
-  // console.log(userLoginDb);
   if (!userLoginDb) {
     return res.status(403).json({ status: 'error', message: 'Такой пользователь не зарегистрирован.' });
   }
@@ -18,4 +19,22 @@ route.post('/', async (req, res) => {
   }
   return res.status(201).json({ status: 'success', url: '/' });
 });
+
+// route.post('/reg', (req, res) => {
+//   req.body?
+//   create()?
+//   res.app.locals.user = req.body.user
+//   redirect('/')
+
+// })
+
+// route.post('/auth', (req, res) => {
+//   req.body ?
+//   findBy()
+//   res.app.locals.user = req.body.user
+
+// })
+
+// route.get('/logout', ())
+
 module.exports = route;

@@ -9,6 +9,7 @@ const mainRoute = require('./routes/mainRoute');
 
 const regRoute = require('./routes/regRoute');
 const logRoute = require('./routes/logRoute');
+const logoutRouter = require('./routes/logout');
 const profilRouter = require('./routes/profilRoute');
 
 app.use(express.static('public'));
@@ -19,6 +20,7 @@ app.use(ssr);
 app.use('/', mainRoute);
 app.use('/reg', regRoute);
 app.use('/log', logRoute);
+app.use('/logout', logoutRouter);
 app.use('/profil', profilRouter);
 
 app.listen(PORT, () => {
