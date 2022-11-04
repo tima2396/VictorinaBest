@@ -1,3 +1,5 @@
+const errReg = document.querySelector('.err-reg');
+
 document.querySelector('#registerForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const {
@@ -14,5 +16,10 @@ document.querySelector('#registerForm').addEventListener('submit', async (e) => 
     }),
   });
   const data = await response.json();
-
+  console.log(data.status);
+  if (data.status === 'error') {
+    errReg.innerHTML = data.message;
+  } else {
+    window.location.assign('/');
+  }
 });

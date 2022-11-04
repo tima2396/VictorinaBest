@@ -4,14 +4,9 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Total extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate({ User, Theme }) {
-      Total.User = Total.belongsTo(User, { foreignKey: 'userId' });
-      Total.Theme = Total.belongsTo(Theme, { foreignKey: 'idTheme' });
+      Total.Users = Total.belongsTo(User, { foreignKey: 'userId' });
+      Total.Themes = Total.belongsTo(Theme, { foreignKey: 'idTheme' });
     }
   }
   Total.init({
