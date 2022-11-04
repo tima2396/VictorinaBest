@@ -14,26 +14,26 @@ const RegPage = ({title}) => {
             <div className="card-body p-5">
               <h2 className="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form id="registerForm" action='/rwexwed' method='post'>
 
                 <div className="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" className="form-control form-control-lg" />
+                  <input name="login" type="text" id="form3Example1cg" className="form-control form-control-lg" />
                   <label className="form-label" for="form3Example1cg">Your Name</label>
                 </div>
 
                 <div className="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" className="form-control form-control-lg" />
+                  <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" />
                   <label className="form-label" for="form3Example4cg">Password</label>
                 </div>
 
                 <div className="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" className="form-control form-control-lg" />
+                  <input name="passwordRepeat" type="password" id="form3Example4cdg" className="form-control form-control-lg" />
                   <label className="form-label" for="form3Example4cdg">Repeat your password</label>
                 </div>
 
 
                 <div className="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit" id='Register'
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 
