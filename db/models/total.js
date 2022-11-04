@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ User }) {
+    static associate({ User, Theme }) {
       Total.User = Total.belongsTo(User, { foreignKey: 'userId' });
+      Total.Theme = Total.belongsTo(Theme, { foreignKey: 'idTheme' });
     }
   }
   Total.init({
@@ -21,8 +22,16 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
+
     score: DataTypes.INTEGER,
-    idTheme: DataTypes.INTEGER,
+
+    idTheme: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Themes',
+        key: 'id',
+      },
+    },
   }, {
     sequelize,
     modelName: 'Total',
