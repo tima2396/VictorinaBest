@@ -17,7 +17,6 @@ app.use(express.json());
 
 app.use(ssr);
 app.use('/', mainRoute);
-
 app.use('/reg', regRoute);
 app.use('/log', logRoute);
 app.use('/profil', profilRouter);

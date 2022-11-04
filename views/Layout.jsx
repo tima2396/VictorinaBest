@@ -2,7 +2,7 @@ const React = require('react');
 
 const Layout = ({ title, children }) => {
 return (
-    <html lang="en">
+    <html lang="ru">
       {' '}
       <head>
         <meta charSet="utf-8" />
