@@ -1,11 +1,21 @@
 const route = require('express').Router();
 
+const { where } = require('sequelize');
 const ThemePage = require('../views/ThemePage.jsx');
-const { Question, Theme } = require('../db/models');
+const {
+  Question, Theme, User, Total,
+} = require('../db/models');
 
 route.get('/:id/:a', async (req, res) => {
   const { id, a } = req.params;
   const tems = await Question.findAll({ where: { idTheme: id } });
+  const { login } = res.app.locals.user;
+  const user = await User.findOne({ where: { login }, raw: true });
+  console.log(user.id);
+
+  if (Number(a) === 0) {
+    await Total.create({ userId: user.id, score: 0, idTheme: id });
+  }
   if (Number(a) < 3) {
     res.renderComponent(ThemePage, {
       title: 'Start Page', tems: tems[a], i: a, id,
@@ -23,7 +33,17 @@ route.post('/', async (req, res) => {
   // console.log(topic);
   const answerFromDB = await Question.findOne({ where: { question: topic } });
   console.log(answerFromDB.answer);
+
+  const { login } = res.app.locals.user;
+  const user = await User.findOne({ where: { login }, raw: true });
+  console.log(user.id);
+
+  const newUser = await Total.findAll({ order: [['createdAt', 'DESC']], raw: true });
+  // const newUser = await Total.findOne({ where: { userId: user.id }, raw: true });
+  console.log(newUser[0]);
+
   if (answer === answerFromDB.answer) {
+    await Total.update({ score: newUser[0].score + 1 }, { where: { id: newUser[0].id } });
     res.json({ message: 'ok' });
   } else {
     res.json({ message: 'no ok' });
