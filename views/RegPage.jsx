@@ -14,7 +14,7 @@ const RegPage = ({title}) => {
             <div className="card-body p-5">
               <h2 className="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form id="registerForm" action='/rwexwed' method='post'>
+              <form id="registerForm" action='/reg' method='post'>
 
                 <div className="form-outline mb-4">
                   <input name="login" type="text" id="form3Example1cg" className="form-control form-control-lg" />
