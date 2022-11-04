@@ -6,7 +6,7 @@ const LoginPage = ({title}) => {
       <Layout title={title}>
         <div className="card">
             <div className="card-body p-5">
-                <form id='formLog'>
+                <form id='formLog' method="post" action='/log'>
 
                     <div className="form-outline mb-4">
                         <input name='login' type="text" id="form2Example1" className="form-control" />
