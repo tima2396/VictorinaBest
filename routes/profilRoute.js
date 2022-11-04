@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Total = require('../db/models/total.js');
+const db = require('../db/models');
 const Profil = require('../views/Profil.jsx');
 
 const arr = [
@@ -19,8 +19,15 @@ const arr = [
   },
 ];
 
-router.get('/', (req, res) => {
-  res.renderComponent(Profil, { title: 'Profil Page', arr });
+router.get('/', async (req, res) => {
+  const { login } = res.app.locals.user;
+  console.log(login);
+  const dbUser = await db.User.findOne({ where: { login }, raw: true });
+  console.log(dbUser.id);
+  const dbTotal = await db.Total.findAll({ where: { userId: dbUser.id }, raw: true });
+  console.log(dbTotal);
+
+  res.renderComponent(Profil, { title: 'Profil Page', dbTotal });
 });
 
 // router.get('/', async (req, res) => {

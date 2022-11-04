@@ -1,12 +1,14 @@
 const React = require('react')
-const Layout = require('./Layout')
-const userName = 'Petya'
-const Profil = ({ title, arr, user }) => {
+const Layout = require('./Layout');
+const Navbar = require('./Navbar');
+
+
+const Profil = ({ title, user, dbTotal, dbUser }) => {
    return (
       <Layout title={title}>
-         {/* {user ? component logout : login} */}
-         <h2>{userName}</h2>
-         <div className = 'conteiner m-5'>
+         <Navbar user={user} />
+         <h2>{`${dbUser}`}</h2>
+         {/* <div className = 'conteiner m-5'>
          <h3>{'Theme 1'}</h3>
          <table className="table">
             <thead>
@@ -83,7 +85,7 @@ const Profil = ({ title, arr, user }) => {
             ))}
 
          </table>
-         </div>
+         </div> */}
       </Layout>
    )
 }
