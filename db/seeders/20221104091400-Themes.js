@@ -2,9 +2,9 @@
 module.exports = {
   async up(queryInterface) {
     const themes = [
-      { name: 'theme 1' },
-      { name: 'theme 2' },
-      { name: 'theme 3' },
+      { name: 'Про кино' },
+      { name: 'Умные вопросы' },
+      { name: 'Тупые вопросы за 300' },
     ];
     const data = themes.map((theme) => ({
       ...theme,

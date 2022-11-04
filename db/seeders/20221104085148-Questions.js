@@ -2,15 +2,15 @@
 module.exports = {
   async up(queryInterface) {
     const questions = [
-      { idTheme: 1, question: 'where?', answer: 'here' },
-      { idTheme: 1, question: 'who?', answer: 'he' },
-      { idTheme: 1, question: 'me?', answer: 'no' },
-      { idTheme: 2, question: 'yes?', answer: 'yep' },
-      { idTheme: 2, question: '155?', answer: '156' },
-      { idTheme: 2, question: 'wolf?', answer: 'fox' },
-      { idTheme: 3, question: 'rabit?', answer: 'wolf' },
-      { idTheme: 3, question: 'kit?', answer: 'kot' },
-      { idTheme: 3, question: 'twiks?', answer: 'pouse' },
+      { idTheme: 1, question: 'В каком фильме снялся Дональд Трамп?', answer: 'один дома 2' },
+      { idTheme: 1, question: 'За какое время перед нами проходят 24 кадра кинопленки?', answer: '1 секунда' },
+      { idTheme: 1, question: 'В скольких номинациях получил «Оскара» фильм «Титаник»?', answer: 'в 11' },
+      { idTheme: 2, question: 'Что означает термин “пиано”?', answer: 'В мягком темпе' },
+      { idTheme: 2, question: 'Как называется маленький пластмассовый кусочек на конце шнурка?', answer: 'Аглет' },
+      { idTheme: 2, question: 'Сколько длится мгновение?', answer: '90 секунд' },
+      { idTheme: 3, question: 'Почему змеи высовывают язык?', answer: 'Чтобы «понюхать» воздух' },
+      { idTheme: 3, question: 'Растение, знающее практически каждого.', answer: 'хрен' },
+      { idTheme: 3, question: 'Сами не горят, а их гасить все равно приходится.', answer: 'долги' },
     ];
     const data = questions.map((quest) => ({
       ...quest,

@@ -10,9 +10,9 @@ route.get('/', async (req, res) => {
   res.renderComponent(MainPage, { title: 'Start Page', tems });
 });
 
-route.get('/:idTheme', async (req, res) => {
-  const quests = await Question.findAll({ raw: true });
-  res.renderComponent(Theme, { title: 'Theme page', quests });
-});
+// route.get('/:idTheme', async (req, res) => {
+//   const quests = await Question.findAll({ raw: true });
+//   res.renderComponent(Theme, { title: 'Theme page', quests });
+// });
 
 module.exports = route;
