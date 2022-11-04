@@ -49,6 +49,8 @@ const RegPage = ({title}) => {
     </div>
   </div>
 </section>
+<script defer src='js/client.js'></script>
+
       </Layout>
    )
 }

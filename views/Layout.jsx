@@ -7,7 +7,6 @@ return (
       <head>
         <meta charSet="utf-8" />
         <link rel="stylesheet" href="style/bootstrap.min.css"></link>
-        <script defer src='js/client.js'></script>
         <title>{title}</title>
       </head>
       <body>{children}</body>
