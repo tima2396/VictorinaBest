@@ -1,17 +1,18 @@
 document.querySelector('#registerForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const {
-    login, password, action, method,
+    login, password, action, method, passwordRepeat,
   } = e.target;
-  //console.log(login.value, password.value);
   const response = await fetch(action, {
     method,
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
       login: login.value,
       password: password.value,
+      passwordRepeat: passwordRepeat.value,
     }),
   });
-  const data = await response.json()
-  console.log(data)
+  const data = await response.json();
+//   console.log(data.status);
+//   if (data.status === 'ok') { window.location.assign('/'); }
 });
