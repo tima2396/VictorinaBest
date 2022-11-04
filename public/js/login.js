@@ -1,4 +1,17 @@
-document.querySelector('#formLog').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const { login, password } = event.target;
+document.querySelector('#formLog').addEventListener('submit', async (event) => {
+   event.preventDefault();
+   const {
+      login, password, action, method,
+   } = event.target;
+   const logpas = await fetch(action, {
+      method,
+      headers: { 'Content-Type': 'Application/json' },
+      body: JSON.stringify({
+         login: login.value,
+         password: password.value,
+      }),
+
+   });
+   const data = await logpas.json();
+
 });

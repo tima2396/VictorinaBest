@@ -12,7 +12,7 @@ const MainPage = ({title,tems}) => {
          </div>
          <ul className='ul'>
             {tems.map((tem)=>(
-               <div id={tem.id} key={tem.id}className="list-group-item"><a href='/'>{tem.tem}</a></div>
+               <div id={tem.id} key={tem.id}className="list-group-item"><a href={`/${tem.id}`} >{tem.name}</a></div>
             ))
             }
          </ul> 

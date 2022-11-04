@@ -3,6 +3,7 @@ document.querySelector('#registerForm').addEventListener('submit', async (e) => 
   const {
     login, password, action, method, passwordRepeat,
   } = e.target;
+
   const response = await fetch(action, {
     method,
     headers: { 'Content-type': 'application/json' },
@@ -13,6 +14,5 @@ document.querySelector('#registerForm').addEventListener('submit', async (e) => 
     }),
   });
   const data = await response.json();
-//   console.log(data.status);
-//   if (data.status === 'ok') { window.location.assign('/'); }
+
 });
