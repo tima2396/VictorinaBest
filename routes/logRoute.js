@@ -9,7 +9,7 @@ route.get('/', async (req, res) => {
 route.post('/', async (req, res) => {
   const { login, password } = req.body;
   res.app.locals.user = { login };
-  console.log(res.app.locals.user);
+  // console.log(res.app.locals.user);
   const userLoginDb = await User.findOne({ where: { login } });
   if (!userLoginDb) {
     return res.status(403).json({ status: 'error', message: 'Такой пользователь не зарегистрирован.' });
