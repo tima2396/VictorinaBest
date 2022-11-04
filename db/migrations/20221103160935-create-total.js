@@ -20,6 +20,10 @@ module.exports = {
       },
       idTheme: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Themes',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
