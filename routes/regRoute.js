@@ -8,22 +8,17 @@ route.get('/', async (req, res) => {
 
 route.post('/', async (req, res) => {
   const { login, password, passwordRepeat } = req.body;
-  console.log({ login });
   const user = await User.findOne({ where: { login } });
   if (!user) {
     if (login.length === 0 || password.length === 0 || passwordRepeat.length === 0) {
-      console.log('zapolni vse stroki');
-      return;
+      return res.status(403).json({ status: 'error', message: 'Заполните все поля.' });
     }
     if (password !== passwordRepeat) {
-      console.log('paroli ne sovpadayut');
-      return;
+      return res.status(403).json({ status: 'error', message: 'Пароли должны совпадать.' });
     }
-    const data = await User.create({ login, password });
-    res.json(data);
-    // res.redirect('/');
-    // zapolni db
-    // res.status(200).json({ status: 'ok', url: '/' });
+    await User.create({ login, password });
+
+    return res.status(201).json({ status: 'success', url: '/' });
   }
 });
 
