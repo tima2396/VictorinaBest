@@ -5,6 +5,7 @@ const Profil = ({ title, arr }) => {
    return (
       <Layout title={title}>
          <h2>{userName}</h2>
+         <div className = 'conteiner m-5'>
          <h3>{'Theme 1'}</h3>
          <table className="table">
             <thead>
@@ -28,7 +29,9 @@ const Profil = ({ title, arr }) => {
                </tbody>
             ))}
          </table>
-         <br></br>
+         </div>
+         
+         <div className = 'conteiner m-5'>
          <h3>{'Theme 2'}</h3>
          <table className='table'>
             <thead>
@@ -52,7 +55,9 @@ const Profil = ({ title, arr }) => {
                </tbody>
             ))}
          </table>
-         <br></br>
+         </div>
+         
+         <div className = 'conteiner m-5'>
          <h3>{'Theme 3'}</h3>
          <table className='table'>
             <thead>
@@ -77,6 +82,7 @@ const Profil = ({ title, arr }) => {
             ))}
 
          </table>
+         </div>
       </Layout>
    )
 }
