@@ -10,12 +10,12 @@ route.post('/', async (req, res) => {
   const { login, password } = req.body;
   const userLoginDb = await User.findOne({ where: { login } });
   // console.log(userLoginDb);
-  if (userLoginDb) {
-    if (userLoginDb.password === password) {
-      res.redirect('/');
-    } else {
-      console.log('Неверный пароль');
-    }
+  if (!userLoginDb) {
+    return res.status(403).json({ status: 'error', message: 'Такой пользователь не зарегистрирован.' });
   }
+  if (userLoginDb.password !== password) {
+    return res.status(403).json({ status: 'error', message: 'Пароль не верный' });
+  }
+  return res.status(201).json({ status: 'success', url: '/' });
 });
 module.exports = route;
