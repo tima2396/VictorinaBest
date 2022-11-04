@@ -6,6 +6,7 @@ const Layout = ({ title, children }) => {
       {' '}
       <head>
         <meta charSet="utf-8" />
+        <link rel="stylesheet" href="style/bootstrap.min.css"></link>
         <title>{title}</title>
       </head>
       <body>{children}</body>
