@@ -1,15 +1,11 @@
 const React = require('react')
-const Layout = require('./Layout')
+const Layout = require('./Layout');
+const Navbar = require('./Navbar');
 
-const MainPage = ({title,tems}) => {
+const MainPage = ({title,tems, user}) => {
    return (
-      <Layout title={title}>
-         <div>
-            <h1 className='h1'>Flashcards</h1>
-            <a href= '/'>Home</a>
-            <a href='/log'>Login</a>
-            <a href='/reg'>Register</a>
-         </div>
+      <Layout title={title}>         
+         <Navbar user={user} />
          <ul className='ul'>
             {tems.map((tem)=>(
                <div id={tem.id} key={tem.id}className="list-group-item"><a href={`/${tem.id}`} >{tem.name}</a></div>
@@ -19,5 +15,7 @@ const MainPage = ({title,tems}) => {
       </Layout>
    )
 }
+
+
 
 module.exports = MainPage;
