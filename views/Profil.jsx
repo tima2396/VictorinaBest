@@ -1,9 +1,10 @@
 const React = require('react')
 const Layout = require('./Layout')
 const userName = 'Petya'
-const Profil = ({ title, arr }) => {
+const Profil = ({ title, arr, user }) => {
    return (
       <Layout title={title}>
+         {/* {user ? component logout : login} */}
          <h2>{userName}</h2>
          <div className = 'conteiner m-5'>
          <h3>{'Theme 1'}</h3>

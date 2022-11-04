@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Total = require('../db/models/total.js');
 const Profil = require('../views/Profil.jsx');
 
 const arr = [
@@ -22,4 +23,10 @@ router.get('/', (req, res) => {
   res.renderComponent(Profil, { title: 'Profil Page', arr });
 });
 
+// router.get('/', async (req, res) => {
+//   const arr = await Total.findAll({ raw: true })
+//   res.renderComponent(Profil, {
+
+//   })
+//   }
 module.exports = router;
